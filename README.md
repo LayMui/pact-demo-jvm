@@ -136,12 +136,13 @@ public class AddUserConsumerTest{
     }
 }
 ```
-
+export PACT_BROKER_URL=http://localhostd:9292
+export PACT_BROKER_URL=https://umangdockerpact.azurewebsites.net/
 - Run maven build to publish the pacts to the pact broker
 
 ```sh
 cd pact-contract-consumer
-mvn clean install pact:publish -Dpact.broker.url=http://localhost:9292
+mvn clean install pact:publish -Dpact.broker.url=$PACT_BROKER_URL
 ```
 
 - Verify the pact broker with the contracts
